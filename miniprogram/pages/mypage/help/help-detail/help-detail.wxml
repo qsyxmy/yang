@@ -1,0 +1,5 @@
+<view class='container'>
+  <view class="section">{{item.title}}\n
+    <text>\n{{item.content}}</text>
+  </view>
+</view>

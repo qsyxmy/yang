@@ -1,0 +1,33 @@
+<view class="main">
+    <view class="content">
+        <view class="movie-title">{{orders.movietitle}}</view>
+        <view class="order-box">
+            <view class="order-date">影片日期：{{orders.year}}年{{orders.month}}月{{orders.day}}日</view>
+            <view>
+                <text class="order-time">开始时间：{{orders.begin}}</text>
+                <text class="order-time">结束时间：{{orders.end}}</text>
+                <view class="order-time">影厅：{{orders.hall}}号厅</view>
+            </view>
+            <view class="xiazi">
+                <text>座位</text>
+                    <view class="number" wx:for="{{selectList}}" wx:key="key">
+                        <text>{{item.x}}排{{item.y}}座</text>
+                    </view>
+            </view>
+            <view class="totalprice">合计
+                <text>{{orders.totalprice}}元</text>
+            </view>
+            <!-- 二维码 -->
+            <canvas tpye = "2d" class='canvas' canvas-id='canvas' bindlongtap='save'></canvas>
+            <view class="vercode">取票码: {{orders.text}}</view>
+            <view class="circle">
+            </view>
+            <view class="address-details">
+                <view class="address">
+                    <text>{{orders.cinematitle}}</text>
+                    <text style="color: #999999">{{orders.cinemaaddress}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

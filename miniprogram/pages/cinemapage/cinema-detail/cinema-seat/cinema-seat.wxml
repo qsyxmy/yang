@@ -1,0 +1,90 @@
+<view class='container'>
+  <!-- 头部海报 -->
+  <view class='header'>
+    <image class="headerimg" src="{{img}}"></image>
+  </view>
+  <!-- 主体 -->
+  <view class='main'>
+    <!-- 影院和电影信息 -->
+    <view class='info'>
+      <view class='title'>电影：{{movietitle}}</view>
+      <view class='theater'>影院：{{cinematitle}}</view>
+      <view class='time'>时间：{{month}}月{{day}}日 - {{begin}}~{{end}}</view>
+    </view>
+    <view class="zuowei-p">
+      <view class='screen'>
+        <view class='screen-shape'></view>
+        <view class='screen-text'>大屏幕</view>
+      </view>
+      <view class="row">
+        <text>1</text>
+        <text>2</text>
+        <text>3</text>
+        <text>4</text>
+        <text>5</text>
+        <text>6</text>
+        <text>7</text>
+        <text>8</text>
+      </view>
+      <view class="center">
+        <view class="zuowei-box">
+          <!-- data-row="{{keys}}"——排，data-col="{{key}}"——列 -->
+          <!-- 座位 -->
+          <view wx:for="{{greenPrice}}" wx:key="key" wx:for-index="keys" class="zuowei" wx:for-item="items"
+                wx:if="{{keys==0||keys==1||keys==2||keys==3||keys==4||keys==5||keys==6||keys==7}}">
+            <view wx:for="{{items}}" wx:key="key" wx:for-index="key" wx:for-item="item" class="item"
+                  bindtap="tap" data-row="{{keys}}" data-col="{{key}}" data-price="{{price}}" 
+                  wx:if="{{key>=0&&key<=15}}">
+                <image src="../../../../icon/icon_zuowei.png" wx:if="{{!item.chooseFlag}}"/>
+                <image src="../../../../icon/icon_yixuan.png" wx:if="{{item.chooseFlag}}"/>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="seat-state">
+        <view>
+          <image src="../../../../icon/icon_zuowei.png"/>
+          <text>可选</text>
+        </view>
+        <view>
+          <image src="../../../../icon/icon_yiyuyue.png"/>
+          <text>不可选</text>
+        </view>
+        <view>
+          <image src="../../../../icon/icon_yixuan.png"/>
+          <text>已选</text>
+        </view>
+      </view>
+    </view>
+    <view class="bottom">
+      <!-- 选的座位信息 -->
+      <view class="select" wx:if="{{selectList.length>0}}">
+        <text class="selected">已选座位</text>
+        <view class="select-box">
+          <view class="select-seat" wx:for="{{selectList}}" wx:key="index">
+            <text>{{item.x}}排{{item.y}}座</text>
+            <view class="close" bindtap="delete" data-index="{{index}}">
+              <image src="../../../../icon/icon_close.png"/>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 价格和确认选座栏 -->
+      <view class="bottom-count">
+        <text wx:if="{{selectList.length==0}}" class="seat">合计：<text class="price">￥0</text></text>
+        <text class="text-r" wx:if="{{selectList.length==0}}">请先选座</text>
+        <view wx:if="{{selectList.length>0}}" class="price-box">
+          <view class="total">合计：
+            <text class="price">￥{{totalprice}}</text>
+          </view>
+        </view>
+        <text class="text-s" wx:if="{{selectList.length>0}}" bindtap="bindFooterTap"
+              data-cinematitle="{{cinematitle}}" data-cinemaaddress="{{cinemaaddress}}"
+              data-movietitle="{{movietitle}}" data-begin="{{begin}}" data-end="{{end}}" 
+              data-hall="{{hall}}" data-price="{{price}}" data-totalprice="{{totalprice}}" data-img="{{img}}"  
+              data-year="{{year}}" data-month="{{month}}" data-day="{{day}}" data-selectList="{{selectList}}">确认选座</text>
+      </view>
+    </view>
+  </view>
+</view>
+

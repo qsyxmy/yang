@@ -1,0 +1,46 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  background: #EEE9E9;
+  overflow: auto;
+}
+.banner {
+  width: 95%;
+  height: 375rpx;
+  margin: 20rpx;
+  box-sizing: border-box;
+  background-color: #eee;
+  line-height: 0;
+  border-radius: 10rpx;
+  overflow: hidden;
+  box-shadow: 2px 2px 2px 1px #ddd;
+}
+.banner-img{
+  width: 100%;
+  height: 100%;
+}
+.section {
+  width: 90%;
+  background-color: #fff;
+  margin: 0 20rpx 20rpx;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  box-shadow: 2px 2px 2px 1px #ddd;
+}
+.section text {
+  font-size: 32rpx;
+  line-height: 2em;
+  color: #666;
+}
+.contact{
+  width: 100%;
+  display: flex;
+}
+.address{
+  text-decoration:underline; 
+}
+.advice{
+  font-size: 35rpx;
+}
+
+

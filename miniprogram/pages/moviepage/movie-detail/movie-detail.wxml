@@ -1,0 +1,75 @@
+<view class="containers">
+  <view wx:if="{{item.pic.large}}">
+    <!-- 上面海报部分 -->
+    <image class="head-img" src="{{item.pic.large}}" mode="aspectFill"/>
+    <view class="head-img-hover">
+      <text class="main-title">{{item.title}}</text>
+      <view class="sub-title">
+        <block wx:for="{{item.countries}}" wx:key="index">
+          {{item+" · "}}
+        </block>
+        {{item.year}}
+      </view>
+      <view class="like">
+        <text class="highlight-font">{{item.review_count}}</text>
+        <text class="plain-font">人喜欢</text>
+        <text class="highlight-font">{{item.comment_count}}</text>
+        <text class="plain-font">条评论</text>
+      </view>
+    </view>
+    <image class="movie-img" src="{{item.pic.large}}" data-src="{{item.pic.large}}"/>
+    <!-- 评分导演部分 -->
+    <view class="summary">
+      <view class="original-title">
+        <text>{{movie.original_title}}</text>
+      </view>
+      <view class="flex-row">
+        <text class="mark">评分</text>
+        <stars rate="{{item.rating.value}}"></stars>
+      </view>
+      <view class="flex-row">
+        <text class="mark">导演</text>
+        <text wx:for="{{item.directors}}" wx:key="index">{{item.name+''}}</text>
+      </view>
+      <view class="flex-row">
+        <text class="mark">影人</text>
+        <block wx:for="{{item.actors}}" wx:key="index">{{item.name+' '}}</block>
+      </view>
+      <view class="flex-row">
+        <text class="mark">类型</text>
+        <block wx:for="{{item.genres}}" wx:key="index">{{item+' '}}</block>
+      </view>
+    </view>
+    <view class="hr"></view>
+    <!-- 简介部分 -->
+    <view class="synopsis">
+      <text class="synopsis-font">{{item.title}}的剧情简介</text>
+      <text class="summary-content">{{item.intro}}</text>
+    </view>
+    <view class="hr"></view>
+    <!-- 导演部分 -->
+    <view class="cast">
+      <text class="cast-font"> 导演 </text>
+      <scroll-view class="cast-imgs" scroll-x="true" style="width:100%">
+        <block wx:for="{{item.directors}}" wx:for-item="item" wx:key="index">
+          <view class="cast-container">
+            <image class="cast-img" src="{{item.avatar.large}}" data-src="{{item.avatar.large}}" mode="aspectFill"></image>
+            <text class="cast-name">{{item.name}}</text>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+    <!-- 影人部分 -->
+    <view class="cast">
+      <text class="cast-font"> 影人 </text>
+      <scroll-view class="cast-imgs" scroll-x="true" style="width:100%">
+        <block wx:for="{{item.actors}}" wx:for-item="item" wx:key="index">
+          <view class="cast-container">
+            <image class="cast-img" src="{{item.avatar.large}}" data-src="{{item.avatar.large}}"></image>
+            <text class="cast-name">{{item.name}}</text>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+</view>

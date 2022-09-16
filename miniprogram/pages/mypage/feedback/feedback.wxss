@@ -1,0 +1,108 @@
+page{
+    background: #EEE9E9;
+}
+.container{
+    height: 100%;
+    background-color: #EEE9E9;
+    padding: 0;
+    padding-top: 30rpx;
+    font-size: 11pt;
+    box-sizing: border-box;
+}
+.feedback-label{
+    margin-left: 15rpx;
+    font-size: 15px;
+    line-height: 100%;
+    color: #999;
+    margin-bottom: 20rpx;
+}
+.form-content{
+  width: 95%;
+}
+.feedback-panel{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: #fff;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.feedback-input{
+    border-bottom: 1px solid #e5e5e5;
+    padding: 15rpx 25rpx;
+}
+
+.feedback-textarea{
+    width: 100%;
+    padding: 25rpx;
+    min-height: 225rpx;
+    box-sizing: border-box;
+}
+
+.feedback-remind {
+    flex: 1;
+    font-size: 25rpx;
+    line-height: 135%;
+    color: #ccc;
+    padding: 0 15rpx;
+    word-break: break-all;
+    text-indent: 1em;
+    padding-top: 30rpx;
+}
+
+.submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40rpx 3%;
+    height: 80rpx;
+    border-radius: 3px;
+    text-align: center;
+    background-color: #66CDAA;
+    color: #fff;
+    font-size: 12pt;
+    line-height: 150%;
+    padding: 0;
+    border: none;
+}
+
+/* 图片 */
+.images_box{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background-color: white;
+  }
+  .img-box{
+    border: 5rpx;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.452);
+    width: 180rpx;
+    height: 180rpx;
+    margin-left: 35rpx;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    position: relative;
+  }
+  /* 删除图片 */
+  .img-delect{
+    width:40rpx;
+    height:40rpx;
+    border-radius:50%;
+    position:absolute;
+    right:-20rpx;
+    top:-20rpx;
+  }
+  .img{
+    width: 100%;
+    height: 100%;
+  }
+  .addimg{
+    margin-top: 60rpx;
+    margin-left: 60rpx;
+    width: 64rpx;
+    height: 64rpx;
+  }

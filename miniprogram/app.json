@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/moviepage/moviepage",
+    "pages/login/login",
+    "pages/reg/reg",
+    "pages/index/index",
+    "pages/mypage/mypage",
+    "pages/cinemapage/cinemapage",
+    "pages/mypage/order/order",
+    "pages/cinemapage/cinema-detail/cinema-seat/cinema-seat",
+    "pages/mypage/about-us/about-us",
+    "pages/mypage/order/order-detail/order-detail",
+    "pages/city-select/city-select",
+    "pages/mypage/feedback/feedback",
+    "pages/cinemapage/cinema-detail/cinema-seat/pay-order/pay-order",
+    "pages/cinemapage/search-cinema/search-cinema",
+    "pages/moviepage/movie-detail/movie-detail",
+    "pages/cinemapage/cinema-detail/cinema-detail",
+    "pages/mypage/help/help",
+    "pages/mypage/help/help-detail/help-detail",
+    "pages/mypage/coupon/coupon",
+    "pages/moviepage/search-movies/search-movies"
+    
+  ],
+  "window": {
+    "backgroundColor": "#66CDAA",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#66CDAA",
+    "navigationBarTitleText": "臭皮匠电影",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "selectedColor": "#66CDAA",
+    "list": [
+      
+      {
+        "pagePath": "pages/moviepage/moviepage",
+        "text": "电影",
+        "iconPath": "icon/icon_moviepage1.png",
+        "selectedIconPath": "icon/icon_moviepage2.png"
+      },
+      {
+        "pagePath": "pages/cinemapage/cinemapage",
+        "text": "影院",
+        "iconPath": "icon/icon_cinemapage1.png",
+        "selectedIconPath": "icon/icon_cinemapage2.png"
+      },
+      {
+        "pagePath": "pages/mypage/mypage",
+        "text": "我的",
+        "iconPath": "icon/icon_mypage1.png",
+        "selectedIconPath": "icon/icon_mypage2.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "如果允许获取，我们将会把你所在的城市展现出来"
+    }
+  }
+}

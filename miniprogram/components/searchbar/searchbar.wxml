@@ -1,0 +1,18 @@
+<view class="page"></view>
+<view class='topbar' wx:if="{{isnavigator}}">
+  <navigator class='search-input' url="../../pages/moviepage/search-movies/search-movies">
+    <image src="../../icon/icon_search.png" class="icon-search"></image>
+    搜电影
+  </navigator>
+</view>
+<view wx:else>
+  <view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder='请输入关键字' bindinput='onInputEvent'/>
+      </view>
+    </view>
+    <view class="weui-search-bar__cancel-btn" bindtap="close">取消</view>
+  </view>
+</view>

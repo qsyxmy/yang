@@ -1,0 +1,36 @@
+<!-- <import src='../../templates/nothing-template/nothing-template.wxml' /> -->
+<!-- 搜索 -->
+<view class='topbar'>
+  <navigator class='city-entry' url="../city-select/city-select">
+    <text class='city-name'>{{city}}</text>
+    <text class='city-entry-arrow'></text>
+  </navigator>
+  <navigator class='search-input' url="search-cinema/search-cinema">
+    <image src="../../icon/icon_search.png" class="icon-search"></image>
+    搜影院
+  </navigator>
+</view>
+<!-- 影院 -->
+<view class='wrapper'>
+  <view>
+    <view class='cinema-section'  hover-class="none" data-id="{{item._id}}" bindtap="bindItem" wx:for="{{cinemaList}}" wx:key="key">
+      <view class='name-price line-ellipsis'>{{item.title}}
+        <text class='sell-price'>
+          <text class='price'>{{item.price}}</text> 元起
+        </text>
+      </view>
+      <view class='address'>
+        <text class='line-ellipsis'>{{item.address}}</text>
+        <text class='distance'>{{item.distance}}</text>
+      </view>
+      <view class='feature-tags'>
+        <text>{{item.refundticket}}</text>
+        <text>{{item.hall}}</text>
+        <text>{{item.streetfood}}</text>
+        <text class='featrue'>VIP</text>
+      </view>
+    </view>
+  </view>
+  <!-- 一键置顶 -->
+  <image src='../../icon/icon_top.png' class='goTop' hidden='{{!floorstatus}}' bindtap="goTop"></image>
+</view>

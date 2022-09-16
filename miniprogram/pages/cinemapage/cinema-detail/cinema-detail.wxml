@@ -1,0 +1,391 @@
+<import src='../../../templates/food-template/food-template.wxml' />
+<view>
+  <!-- 影院部分 -->
+  <view>
+    <view class='cinema-info'>
+      <view class='info-box'>
+        <view class='title line-ellipsis'>{{cinema.title}}</view>
+        <view class='location'>{{cinema.address}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 电影部分 -->
+  <scroll-view class="scroll-menu" scroll-x="true">
+    <view class="swiper-tab">
+      <block wx:for="{{movies}}" wx:key="sptab">
+        <view class="swiper-tab-list {{currtab ==index ? 'on' : ''}}" data-current="{{index}}" bindtap="tabSwitch">
+          <image class="movie-img" src="{{item.img}}" mode="aspectFill"></image>
+          <view class="movie-title">{{item.title}}</view>
+          <view class="grade">
+            <text class="small">{{item.score}}分</text>
+            <text class="small">{{item.durations}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+  <!-- 时间部分 -->
+  <swiper class="swp" current="{{currtab}}" bindchange="tabChange">
+    <!-- 电影1 -->
+    <swiper-item>
+      <view>
+        <view class="nav">
+          <view class="{{todaySelected?'current':'default'}}" bindtap="handleTodaySelected">
+            <view class='day'>{{ m + "月" + d + "日" }}</view>
+          </view>
+          <view class="{{tomorrowSelected?'current':'default'}}" bindtap="handleTomorrowSelected">
+            <view class='day'>{{ m1 + "月" + d1 + "日" }}</view>
+          </view>
+        </view>
+        <!-- 今日 -->
+        <view class="{{todaySelected?'show':'hidden'}}">
+          <view class='item' wx:for="{{time0}}" wx:key="key">
+            <view class='time-block box'>
+              <view class='begin'>{{item.begin}}</view>
+              <view class='end'>{{item.end}}散场</view>
+            </view>
+            <view class='info-block box'>
+              <view class="lan line-ellipsis">影厅</view>
+              <view class="hall line-ellipsis">{{item.hall}}号厅</view>
+            </view>
+            <view class='price box'>
+              <view class='price-box line-ellipsis'>
+                <view class="sellPr">
+                  <text class="stonefont">{{item.price}}</text>
+                  <text class="d">元</text>
+                </view>
+              </view>
+              <view class='discount line-ellipsis' >暂无折扣</view>
+            </view>
+            <view class='button-block'>
+              <view class='button' bindtap="bindItem" 
+                    data-cinematitle="{{cinema.title}}" data-cinemaaddress="{{cinema.address}}" data-movietitle="{{movies[0].title}}" 
+                    data-begin="{{item.begin}}" data-end="{{item.end}}" data-hall="{{item.hall}}" 
+                    data-price="{{item.price}}" data-img="{{movies[0].img}}"  
+                    data-year="{{y}}" data-month="{{m}}" data-day="{{d}}">购票</view>
+            </view>
+          </view>
+        </view>
+        <!-- 次日 -->
+        <view class="{{tomorrowSelected?'show':'hidden'}}">
+          <view class='item' wx:for="{{time0}}" wx:key="key">
+            <view class='time-block box'>
+              <view class='begin'>{{item.begin}}</view>
+              <view class='end'>{{item.end}}散场</view>
+            </view>
+            <view class='info-block box'>
+              <view class="lan line-ellipsis">影厅</view>
+              <view class="hall line-ellipsis">{{item.hall}}号厅</view>
+            </view>
+            <view class='price box'>
+              <view class='price-box line-ellipsis'>
+                <view class="sellPr">
+                  <text class="stonefont">{{item.price}}</text>
+                  <text class="d">元</text>
+                </view>
+              </view>
+              <view class='discount line-ellipsis' >暂无折扣</view>
+            </view>
+            <view class='button-block'>
+              <view class='button' bindtap="bindItem" 
+                    data-cinematitle="{{cinema.title}}" data-cinemaaddress="{{cinema.address}}" data-movietitle="{{movies[0].title}}" 
+                    data-begin="{{item.begin}}" data-end="{{item.end}}" data-hall="{{item.hall}}" 
+                    data-price="{{item.price}}" data-img="{{movies[0].img}}"  
+                    data-year="{{y1}}" data-month="{{m1}}" data-day="{{d1}}">购票</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+    <!-- 电影2 -->
+    <swiper-item>
+      <view>
+        <view class="nav">
+          <view class="{{todaySelected?'current':'default'}}" bindtap="handleTodaySelected">
+            <view class='day'>{{ m + "月" + d + "日" }}</view>
+          </view>
+          <view class="{{tomorrowSelected?'current':'default'}}" bindtap="handleTomorrowSelected">
+            <view class='day'>{{ m1 + "月" + d1 + "日" }}</view>
+          </view>
+        </view>
+        <!-- 今日 -->
+        <view class="{{todaySelected?'show':'hidden'}}">
+          <view class='item' wx:for="{{time1}}" wx:key="key">
+            <view class='time-block box'>
+              <view class='begin'>{{item.begin}}</view>
+              <view class='end'>{{item.end}}散场</view>
+            </view>
+            <view class='info-block box'>
+              <view class="lan line-ellipsis">影厅</view>
+              <view class="hall line-ellipsis">{{item.hall}}号厅</view>
+            </view>
+            <view class='price box'>
+              <view class='price-box line-ellipsis'>
+                <view class="sellPr">
+                  <text class="stonefont">{{item.price}}</text>
+                  <text class="d">元</text>
+                </view>
+              </view>
+              <view class='discount line-ellipsis' >暂无折扣</view>
+            </view>
+            <view class='button-block'>
+              <view class='button' bindtap="bindItem" 
+                    data-cinematitle="{{cinema.title}}" data-cinemaaddress="{{cinema.address}}" data-movietitle="{{movies[1].title}}" 
+                    data-begin="{{item.begin}}" data-end="{{item.end}}" data-hall="{{item.hall}}" 
+                    data-price="{{item.price}}" data-img="{{movies[1].img}}"  
+                    data-year="{{y}}" data-month="{{m}}" data-day="{{d}}">购票</view>
+            </view>
+          </view>
+        </view>
+        <!-- 次日 -->
+        <view class="{{tomorrowSelected?'show':'hidden'}}">
+          <view class='item' wx:for="{{time1}}" wx:key="key">
+            <view class='time-block box'>
+              <view class='begin'>{{item.begin}}</view>
+              <view class='end'>{{item.end}}散场</view>
+            </view>
+            <view class='info-block box'>
+              <view class="lan line-ellipsis">影厅</view>
+              <view class="hall line-ellipsis">{{item.hall}}号厅</view>
+            </view>
+            <view class='price box'>
+              <view class='price-box line-ellipsis'>
+                <view class="sellPr">
+                  <text class="stonefont">{{item.price}}</text>
+                  <text class="d">元</text>
+                </view>
+              </view>
+              <view class='discount line-ellipsis' >暂无折扣</view>
+            </view>
+            <view class='button-block'>
+              <view class='button' bindtap="bindItem" 
+                    data-cinematitle="{{cinema.title}}" data-cinemaaddress="{{cinema.address}}" data-movietitle="{{movies[1].title}}" 
+                    data-begin="{{item.begin}}" data-end="{{item.end}}" data-hall="{{item.hall}}" 
+                    data-price="{{item.price}}" data-img="{{movies[1].img}}"  
+                    data-year="{{y1}}" data-month="{{m1}}" data-day="{{d1}}">购票</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+    <!-- 电影3 -->
+    <swiper-item>
+      <view>
+        <view class="nav">
+          <view class="{{todaySelected?'current':'default'}}" bindtap="handleTodaySelected">
+            <view class='day'>{{ m + "月" + d + "日" }}</view>
+          </view>
+          <view class="{{tomorrowSelected?'current':'default'}}" bindtap="handleTomorrowSelected">
+            <view class='day'>{{ m1 + "月" + d1 + "日" }}</view>
+          </view>
+        </view>
+        <!-- 今日 -->
+        <view class="{{todaySelected?'show':'hidden'}}">
+          <view class='item' wx:for="{{time2}}" wx:key="key">
+            <view class='time-block box'>
+              <view class='begin'>{{item.begin}}</view>
+              <view class='end'>{{item.end}}散场</view>
+            </view>
+            <view class='info-block box'>
+              <view class="lan line-ellipsis">影厅</view>
+              <view class="hall line-ellipsis">{{item.hall}}号厅</view>
+            </view>
+            <view class='price box'>
+              <view class='price-box line-ellipsis'>
+                <view class="sellPr">
+                  <text class="stonefont">{{item.price}}</text>
+                  <text class="d">元</text>
+                </view>
+              </view>
+              <view class='discount line-ellipsis' >暂无折扣</view>
+            </view>
+            <view class='button-block'>
+              <view class='button' bindtap="bindItem" 
+                    data-cinematitle="{{cinema.title}}" data-cinemaaddress="{{cinema.address}}" data-movietitle="{{movies[2].title}}" 
+                    data-begin="{{item.begin}}" data-end="{{item.end}}" data-hall="{{item.hall}}" 
+                    data-price="{{item.price}}" data-img="{{movies[2].img}}"  
+                    data-year="{{y}}" data-month="{{m}}" data-day="{{d}}">购票</view>
+            </view>
+          </view>
+        </view>
+        <!-- 次日 -->
+        <view class="{{tomorrowSelected?'show':'hidden'}}">
+          <view class='item' wx:for="{{time2}}" wx:key="key">
+            <view class='time-block box'>
+              <view class='begin'>{{item.begin}}</view>
+              <view class='end'>{{item.end}}散场</view>
+            </view>
+            <view class='info-block box'>
+              <view class="lan line-ellipsis">影厅</view>
+              <view class="hall line-ellipsis">{{item.hall}}号厅</view>
+            </view>
+            <view class='price box'>
+              <view class='price-box line-ellipsis'>
+                <view class="sellPr">
+                  <text class="stonefont">{{item.price}}</text>
+                  <text class="d">元</text>
+                </view>
+              </view>
+              <view class='discount line-ellipsis' >暂无折扣</view>
+            </view>
+            <view class='button-block'>
+              <view class='button' bindtap="bindItem" 
+                    data-cinematitle="{{cinema.title}}" data-cinemaaddress="{{cinema.address}}" data-movietitle="{{movies[2].title}}" 
+                    data-begin="{{item.begin}}" data-end="{{item.end}}" data-hall="{{item.hall}}"
+                    data-price="{{item.price}}" data-img="{{movies[2].img}}"  
+                    data-year="{{y1}}" data-month="{{m1}}" data-day="{{d1}}">购票</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+    <!-- 电影4 -->
+    <swiper-item>
+      <view>
+        <view class="nav">
+          <view class="{{todaySelected?'current':'default'}}" bindtap="handleTodaySelected">
+            <view class='day'>{{  m + "月" + d + "日" }}</view>
+          </view>
+          <view class="{{tomorrowSelected?'current':'default'}}" bindtap="handleTomorrowSelected">
+            <view class='day'>{{ m1 + "月" + d1 + "日" }}</view>
+          </view>
+        </view>
+        <!-- 今日 -->
+        <view class="{{todaySelected?'show':'hidden'}}">
+          <view class='item' wx:for="{{time3}}" wx:key="key">
+            <view class='time-block box'>
+              <view class='begin'>{{item.begin}}</view>
+              <view class='end'>{{item.end}}散场</view>
+            </view>
+            <view class='info-block box'>
+              <view class="lan line-ellipsis">影厅</view>
+              <view class="hall line-ellipsis">{{item.hall}}号厅</view>
+            </view>
+            <view class='price box'>
+              <view class='price-box line-ellipsis'>
+                <view class="sellPr">
+                  <text class="stonefont">{{item.price}}</text>
+                  <text class="d">元</text>
+                </view>
+              </view>
+              <view class='discount line-ellipsis' >暂无折扣</view>
+            </view>
+            <view class='button-block'>
+              <view class='button' bindtap="bindItem" 
+                    data-cinematitle="{{cinema.title}}" data-cinemaaddress="{{cinema.address}}" data-movietitle="{{movies[3].title}}" 
+                    data-begin="{{item.begin}}" data-end="{{item.end}}" data-hall="{{item.hall}}" 
+                    data-price="{{item.price}}" data-img="{{movies[3].img}}"  
+                    data-year="{{y}}" data-month="{{m}}" data-day="{{d}}">购票</view>
+            </view>
+          </view>
+        </view>
+        <!-- 次日 -->
+        <view class="{{tomorrowSelected?'show':'hidden'}}">
+          <view class='item' wx:for="{{time3}}" wx:key="key">
+            <view class='time-block box'>
+              <view class='begin'>{{item.begin}}</view>
+              <view class='end'>{{item.end}}散场</view>
+            </view>
+            <view class='info-block box'>
+              <view class="lan line-ellipsis">影厅</view>
+              <view class="hall line-ellipsis">{{item.hall}}号厅</view>
+            </view>
+            <view class='price box'>
+              <view class='price-box line-ellipsis'>
+                <view class="sellPr">
+                  <text class="stonefont">{{item.price}}</text>
+                  <text class="d">元</text>
+                </view>
+              </view>
+              <view class='discount line-ellipsis' >暂无折扣</view>
+            </view>
+            <view class='button-block'>
+              <view class='button' bindtap="bindItem" 
+                    data-cinematitle="{{cinema.title}}" data-cinemaaddress="{{cinema.address}}" data-movietitle="{{movies[3].title}}" 
+                    data-begin="{{item.begin}}" data-end="{{item.end}}" data-hall="{{item.hall}}" 
+                    data-price="{{item.price}}" data-img="{{movies[3].img}}"  
+                    data-year="{{y1}}" data-month="{{m1}}" data-day="{{d1}}">购票</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+    <!-- 电影5 -->
+    <swiper-item>
+      <view>
+        <view class="nav">
+          <view class="{{todaySelected?'current':'default'}}" bindtap="handleTodaySelected">
+            <view class='day'>{{ m + "月" + d + "日" }}</view>
+          </view>
+          <view class="{{tomorrowSelected?'current':'default'}}" bindtap="handleTomorrowSelected">
+            <view class='day'>{{ m1 + "月" + d1 + "日" }}</view>
+          </view>
+        </view>
+        <!-- 今日 -->
+        <view class="{{todaySelected?'show':'hidden'}}">
+          <view class='item' wx:for="{{time4}}" wx:key="key">
+            <view class='time-block box'>
+              <view class='begin'>{{item.begin}}</view>
+              <view class='end'>{{item.end}}散场</view>
+            </view>
+            <view class='info-block box'>
+              <view class="lan line-ellipsis">影厅</view>
+              <view class="hall line-ellipsis">{{item.hall}}号厅</view>
+            </view>
+            <view class='price box'>
+              <view class='price-box line-ellipsis'>
+                <view class="sellPr">
+                  <text class="stonefont">{{item.price}}</text>
+                  <text class="d">元</text>
+                </view>
+              </view>
+              <view class='discount line-ellipsis' >暂无折扣</view>
+            </view>
+            <view class='button-block'>
+              <view class='button' bindtap="bindItem"
+                    data-cinematitle="{{cinema.title}}" data-cinemaaddress="{{cinema.address}}" data-movietitle="{{movies[4].title}}" 
+                    data-begin="{{item.begin}}" data-end="{{item.end}}" data-hall="{{item.hall}}" 
+                    data-price="{{item.price}}" data-img="{{movies[4].img}}"  
+                    data-year="{{y}}" data-month="{{m}}" data-day="{{d}}">购票</view>
+            </view>
+          </view>
+        </view>
+        <!-- 次日 -->
+        <view class="{{tomorrowSelected?'show':'hidden'}}">
+          <view class='item' wx:for="{{time4}}" wx:key="key">
+            <view class='time-block box'>
+              <view class='begin'>{{item.begin}}</view>
+              <view class='end'>{{item.end}}散场</view>
+            </view>
+            <view class='info-block box'>
+              <view class="lan line-ellipsis">影厅</view>
+              <view class="hall line-ellipsis">{{item.hall}}号厅</view>
+            </view>
+            <view class='price box'>
+              <view class='price-box line-ellipsis'>
+                <view class="sellPr">
+                  <text class="stonefont">{{item.price}}</text>
+                  <text class="d">元</text>
+                </view>
+              </view>
+              <view class='discount line-ellipsis' >暂无折扣</view>
+            </view>
+            <view class='button-block'>
+              <view class='button' bindtap="bindItem"
+               data-movietitle="{{movies[4].title}}" 
+                    data-cinematitle="{{cinema.title}}" data-cinemaaddress="{{cinema.address}}" data-movietitle="{{movies[4].title}}"
+                    data-begin="{{item.begin}}" data-end="{{item.end}}" data-hall="{{item.hall}}" 
+                    data-price="{{item.price}}" data-img="{{movies[4].img}}" 
+                    data-year="{{y1}}" data-month="{{m1}}" data-day="{{d1}}">购票</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+  <view class='food-title'>影院超值套餐</view>
+  <template is="food1" />
+  <template is="food2" />
+  <template is="food3" />
+  <template is="food4" />
+</view>

@@ -1,0 +1,54 @@
+@import '../../../templates/nothing-template/nothing-template.wxss';
+.top{
+  background-color: #fff;
+  padding-top: 100rpx;
+}
+.movie-box{
+  padding-bottom: 20rpx;
+  border-bottom: 5rpx solid #EEE9E9;
+}
+.movie-section{
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 228rpx;
+  padding: 0 30rpx;
+  border-top: 1px solid #f0f0f0;
+}
+.movie-info {
+  margin: 0 20rpx;
+  font-size: 26rpx;
+  color: #666;
+  width: 55%;
+}
+.movie-info>view {
+  margin-bottom: 6rpx;
+}
+.movie-img {
+  width: 128rpx;
+  height: 180rpx;
+}
+.movie-name {
+  width: 360rpx;
+  font-size: 34rpx;
+  color: #333;
+  padding-right: 10rpx;
+}
+.version{
+  display: inline-block;
+  height: 28rpx;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+}
+.score {
+  flex: 1;
+  text-align: right;
+  font-size: 28rpx;
+  color: #666;
+}
+.grade{
+  font-size: 32rpx;
+  color: #faaf00;
+}

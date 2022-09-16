@@ -1,0 +1,98 @@
+<!-- 套餐小吃 -->
+<template name="food1">
+  <view class='tuan-list'>
+      <view class='tuan-item' >
+        <view  class='snack-item'  data-info='{{i}}'>
+          <view>
+            <image src="../../../images/package1.jpg"></image>
+          </view>
+          <view class='snack-info'>
+            <view class='first-title'>两人套餐</view>
+            <view class='second-title line-ellipsis'>两杯250ml可乐和大桶爆米花</view>
+            <view class='snack-price'>
+              <view>
+                <text class='num'>30</text>
+                <text class='rmb'>元</text>
+                <text class='font'> 影院价:25元</text>
+              </view>
+              <view class='font'>已售：875</view>
+            </view>
+          </view>
+        </view>
+      </view>
+  </view>
+</template>
+<!-- 套餐小吃 -->
+<template name="food2">
+  <view class='tuan-list'>
+      <view class='tuan-item' >
+        <view  class='snack-item'  data-info='{{i}}'>
+          <view>
+            <image src="../../../images/package2.jpg"></image>
+          </view>
+          <view class='snack-info'>
+            <view class='first-title'>单人套餐</view>
+            <view class='second-title line-ellipsis'>一杯250ml可乐和中桶爆米花</view>
+            <view class='snack-price'>
+              <view>
+                <text class='num'>18</text>
+                <text class='rmb'>元</text>
+                <text class='font'> 影院价:16.5元</text>
+              </view>
+              <view class='font'>已售：976</view>
+            </view>
+          </view>
+        </view>
+      </view>
+  </view>
+</template>
+<!-- 套餐小吃 -->
+<template name="food3">
+  <view class='tuan-list'>
+      <view class='tuan-item' >
+        <view  class='snack-item'  data-info='{{i}}'>
+          <view>
+            <image src="../../../images/package3.jpg"></image>
+          </view>
+          <view class='snack-info'>
+            <view class='first-title'>单人套餐</view>
+            <view class='second-title line-ellipsis'>一杯250ml可乐和小桶爆米花</view>
+            <view class='snack-price'>
+              <view>
+                <text class='num'>15</text>
+                <text class='rmb'>元</text>
+                <text class='font'> 影院价:13元</text>
+              </view>
+              <view class='font'>已售：755</view>
+            </view>
+          </view>
+        </view>
+      </view>
+  </view>
+</template>
+<!-- 套餐小吃 -->
+<template name="food4">
+  <view class='tuan-list'>
+      <view class='tuan-item' >
+        <view  class='snack-item'  data-info='{{i}}'>
+          <view>
+            <image src="../../../images/package4.jpg"></image>
+          </view>
+          <view class='snack-info'>
+            <view class='first-title'>单人套餐</view>
+            <view class='second-title line-ellipsis'>中桶爆米花</view>
+            <view class='snack-price'>
+              <view>
+                <text class='num'>10</text>
+                <text class='rmb'>元</text>
+                <text class='font'> 影院价:9元</text>
+              </view>
+              <view class='font'>已售：374</view>
+            </view>
+          </view>
+        </view>
+      </view>
+  </view>
+</template>
+        
+        

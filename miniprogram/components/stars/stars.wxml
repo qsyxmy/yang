@@ -1,0 +1,6 @@
+<view class="rate-group">
+  <image class="img" style="width:{{starsize}}rpx; height:{{starsize}}rpx;" wx:for="{{lights}}" wx:key="key" src="../../icon/icon_starlight.png"></image>
+  <image class="img" style="width:{{starsize}}rpx; height:{{starsize}}rpx;" wx:for="{{halfs}}" wx:key="key" src="../../icon/icon_starhalf.png"></image>
+  <image class="img" style="width:{{starsize}}rpx; height:{{starsize}}rpx;" wx:for="{{grays}}" wx:key="key" src="../../icon/icon_stargray.png"></image>
+  <text style="font-size:{{fontsize}}rpx; color:{{fontcolor}};" class="score">{{ratetext}}分</text>
+</view>

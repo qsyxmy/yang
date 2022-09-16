@@ -1,0 +1,15 @@
+<view class='container'>
+  <view class='banner'>
+    <image class="banner-img" src='/images/youcan.jpg' mode='aspectFill'></image>
+  </view>
+  
+  <view class='section'>
+    <text> 这里是自助电影订票小程序，我们是“四个臭皮匠”团队，为客户满意的微信小程序电影订票！</text>
+  </view>
+  <view class="section">
+    <view class="contact">
+      <button open-type='contact' class="advice" session-from='weapp' hover-class="btn-hover">联系我们</button>
+      <button class="advice"  bindtap="calling" hover-class="btn-hover">电话咨询</button>
+    </view>
+  </view>
+</view>

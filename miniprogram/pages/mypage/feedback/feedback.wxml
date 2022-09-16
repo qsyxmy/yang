@@ -1,0 +1,27 @@
+<view class="container">
+    <text class="feedback-label">新建反馈</text>
+    <form class="form-content" bindsubmit="publishArticle">
+      <view class="feedback-panel">
+        <view class="feedback-input">
+          <input placeholder="请输入反馈标题" name="title" value="{{title}}" />
+        </view>
+        <textarea class="feedback-textarea" cursor-spacing="50" placeholder="请输入反馈内容"  value="{{article}}" name="article"></textarea>
+      </view>
+        <text class="feedback-label">选择图片（可选）</text>
+        <view class="images_box">
+          <block wx:key="imgbox" wx:for="{{imgbox}}">
+            <view class='img-box'>
+              <image class='img' src='{{item}}'></image>
+              <view class='img-delect' data-deindex='{{index}}' bindtap='imgDelete1'>
+                <image class='img' src='../../../icon/icon_delete.png'></image>   
+              </view>
+            </view>
+          </block>
+          <view class='img-box' bindtap='addPic1' wx:if="{{imgbox}}">
+            <image class='addimg' src='../../../icon/icon_addimg.png'></image>   
+          </view>
+        </view>
+      <text class="feedback-remind ">您可以加入我们的用户反馈QQ群123456789进行即时反馈。</text>
+      <button class="submit-btn"  formType="submit" bindtap="tapOneDialogButton">提交反馈</button>
+    </form>
+</view>

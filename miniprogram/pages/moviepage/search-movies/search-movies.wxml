@@ -1,0 +1,27 @@
+<import src='../../../templates/nothing-template/nothing-template.wxml' />
+<!-- 搜索框 -->
+<searchbar bindsearchinput="onSearchInputEvent" ></searchbar>
+<!-- 显示的内容 -->
+<view class="top" wx:if="{{subjects.length}}">
+  <view class='movie-box'>
+    <view wx:for='{{subjects}}' wx:key='key'  class='movie-section' data-id="{{item.id}}" bindtap="bindItem" hidden="{{!msg}}">
+      <image class='movie-img' src='{{item.pic.large}}'></image>
+      <view class='movie-info'>
+        <view class='movie-name line-ellipsis'>{{item.title}}
+          <text class='version {{movie.version}}'></text>
+        </view>
+        <view class='line-ellipsis'>{{item.original_title}}</view>
+        <view class='line-ellipsis'>{{item.genres}}</view>
+        <view class='line-ellipsis'>{{item.year}}</view>
+      </view>
+      <view class='score'>
+        <text class='grade'>{{item.rating.value}}分</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:else>
+  <view hidden="{{!msg}}">
+    <template is="nothing" data='{{message:"没有找到相关内容"}}' />
+  </view> 
+</view>

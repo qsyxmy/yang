@@ -1,0 +1,4 @@
+<view class='nothing'>
+    <image src='/images/nothing.png' class='nothing-img'></image>
+    <view class='nothing-text'>抱歉，你没有优惠卷</view>
+  </view>

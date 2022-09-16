@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "stars":"/components/stars/stars",
+    "searchbar":"/components/searchbar/searchbar"
+  },
+  "navigationBarTitleText": "电影",
+  "enablePullDownRefresh": false
+}

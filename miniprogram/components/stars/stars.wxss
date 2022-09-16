@@ -1,0 +1,17 @@
+.rate-group{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.img{
+  padding-top: 10rpx;
+  width: 25rpx;
+  height: 25rpx;
+}
+
+.score {
+  padding-left: 15rpx;
+  color: #ffb400;
+  font-size: 30rpx;
+}

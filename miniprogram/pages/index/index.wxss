@@ -1,0 +1,222 @@
+.topbar {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  background-color: #66CDAA;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100rpx;
+}
+.city-entry {
+  padding-left: 30rpx;
+  font-size: 34rpx;
+  color: #fff;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.city-name {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 19.2vw;
+}
+
+.city-entry-arrow {
+  width: 0;
+  height: 0;
+  border: 8rpx solid #fff;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  display: inline-block;
+  margin-left: 8rpx;
+  margin-top: 10rpx;
+}
+
+.search-input {
+  flex-grow: 1;
+  height: 65rpx;
+  font-size: 28rpx;
+  color: #999;
+  border-radius: 30rpx;
+  margin: 0 30rpx;
+  background: #fff;
+  line-height: 65rpx;
+  text-align: center;
+}
+
+.icon-search{
+  width: 27rpx;
+  height: 27rpx;
+}
+.bottom{
+  padding-top: 100rpx;
+}
+/*轮播图*/
+.lunbo{
+  width: 100%;
+  height: 400rpx;
+  display: block;
+  position: relative;
+}
+.lunbo-img{
+  width: 100%;
+  height: 100%;
+}
+/*正在热映和即将上映*/
+.nav{
+  width:100%;
+  height:80rpx;
+  display:flex;
+  left:0;
+  background-color: #ffffff;
+  z-index: 999;
+}
+.default,.current{
+  height:100%;
+  line-height:80rpx;
+  width:50%;
+  text-align:center;
+  border-bottom:1px solid #dfdfdf; 
+}
+.current{
+  font-weight: 700;
+  font-size: 40rpx;
+  color: #66CDAA;
+  border-bottom:2px solid #66CDAA;
+}
+.show{
+  display:block;
+
+}
+.hidden{
+  display:none;
+}
+/*正在热映和即将上映内容图文排版*/
+ .mod-image{
+   width: 270rpx;
+   height: 380rpx;
+   border-radius: 15rpx;
+ }
+ .mod-title{
+   width: 250rpx;
+   font-size:30rpx;
+   font-family: '微软雅黑';
+   display:flex;
+   height:45rpx;
+   margin-top:15rpx;
+ }
+ .mod-text{
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow:ellipsis;
+ }
+ .scroll-menu{
+  height: 520rpx;
+  background-color: #EEE9E9;
+ }
+ .scroll-nav{
+  width: 100%;
+  height: 400rpx;
+  display: flex;
+  white-space: nowrap;
+}
+ .nav-item{
+  width: 100%;
+  height: 100%;
+  margin:23rpx 10rpx 0 10rpx;
+
+}
+ .mod-info{
+   display: flex;
+   flex-direction: column;
+   height:40rpx;
+ }
+ .moinfont{
+   white-space: pre-wrap;
+   font-size: 25rpx;
+   font-family: '微软雅黑';
+   color:#8E8E8E;
+ }
+ /*隐藏滚动条*/
+ ::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+ /*视频*/
+.video-play{
+  padding-bottom: 10rpx;
+  background-color:#EEE9E9 ;
+}
+video{
+  width: 100%;
+}
+.coverImg{
+  position:relative;
+  width: 100%;
+}
+.playImg{
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  width: 100rpx;
+  height: 100rpx;
+}
+.word {
+  font-size: 20px;
+  position: absolute;
+  margin-left: 10rpx;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0; 
+  color: #ffffff;
+}  
+.post-author-date {
+  
+  padding: 0rpx 0 10rpx 10px;
+}
+.post-author {
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: middle;
+  border-radius: 50%;
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+}
+.post-date {
+  margin-left: 20px;
+  color: #000000;
+  justify-content: center;
+}
+.post-more{
+  width: 50rpx;
+  height: 50rpx; 
+  float: right;
+  padding-right: 20rpx;
+  padding-top: 20rpx;
+}
+/* 返回顶部 */
+.goTop{
+  height: 80rpx;
+  width: 80rpx;
+  position: fixed;
+  z-index: 1;
+  bottom: 100rpx;
+  background: #EEE9E9;
+  right: 50rpx;
+  border-radius: 50%;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+<import src='../../../templates/nothing-template/nothing-template.wxml' />
+<view wx:if="{{ordersList.length}}">
+  <view class="swiper-box" wx:for="{{ordersList}}" wx:key="key">
+    <view class="hot-box">
+      <view  class="orderDetails" data-id="{{item._id}}" bindtap="bindItem">
+        <view class="orderListTitle">
+          <text class="cinematitle">{{item.cinematitle}}</text>
+          <text class="movietitle">{{item.movietitle}}</text>
+        </view>
+        <view class="orderListDetails">
+          <view class="movieimg">
+            <image src="{{item.img}}" background-size="cover" mode="aspectFill"></image>
+          </view>
+          <view class="movieinfo">
+            <view class="moviedate">日期: {{item.year}}年{{item.month}}月{{item.day}}日</view>
+            <view class="movietime">时间：{{item.begin}}~{{item.end}}</view>
+            <view class="moviehall">影厅：{{item.hall}}号厅</view>
+          </view>
+        </view>
+      </view>
+        <view class="movieprice">
+          <view>
+            <text class="totalprice">合计：￥{{item.totalprice}}</text>
+          </view>
+          <bottom class="unsubscribe" data-id="{{item._id}}" bindtap="delete">退订</bottom>
+        </view>
+        <view class="line"></view>
+      <image src='../../../icon/icon_top.png' class='goTop' hidden='{{!floorstatus}}' bindtap="goTop"></image>
+    </view>
+  </view>
+  <view class="loading" hidden="{{!loadMore}}">正在载入更多...</view>
+  <view class="loading" hidden="{{!loadAll}}">您的订单就这么多啦~</view>
+</view>
+<view wx:else> 
+  <template is="nothing" data='{{message:"抱歉，您还没有订单"}}' />
+</view>

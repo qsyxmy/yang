@@ -1,0 +1,49 @@
+.tuan-list {
+  padding-left: 30rpx;
+  border-top: 20rpx solid #f5f5f5;
+}
+
+.snack-item {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px solid #e6e6e6;
+  padding: 26rpx 30rpx 26rpx 0;
+}
+.snack-item image {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 20rpx;
+}
+.snack-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-grow: 1;
+  overflow: hidden;
+}
+.first-title {
+  font-size: 30rpx;
+  color: #666;
+}
+.second-title {
+  width: 90%;
+  font-size: 24rpx;
+  color: #999;
+}
+.snack-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: #999;
+}
+.num {
+  font-size: 30rpx;
+  color: #f03d37;
+}
+.rmb {
+  color: #f03d37;
+}
+.font {
+  font-size: 24rpx;
+}

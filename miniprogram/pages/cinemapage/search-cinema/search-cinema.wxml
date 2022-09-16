@@ -1,0 +1,42 @@
+<import src='../../../templates/nothing-template/nothing-template.wxml' />
+<!-- 搜索栏 -->
+<view>
+  <view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder='{{value}}' bindinput='search'/>
+      </view>
+    </view>
+    <view class="weui-search-bar__cancel-btn" bindtap="close">取消</view>
+  </view>
+</view>
+<!-- 显示部分（先判断输入框是否有内容） -->
+<view class='wrapper' wx:if="{{cinemaList.length}}">
+  <view>
+  <!-- hidden="{{!msg}}" 作用是先隐藏起来 -->
+    <view class='cinema-section' hidden="{{!msg}}"  hover-class="none" data-id="{{item._id}}" bindtap="bindItem" wx:for="{{cinemaList}}" wx:key="key">
+      <view class='name-price line-ellipsis'>{{item.title}}
+        <text class='sell-price'>
+          <text class='price'>{{item.price}}</text> 元起
+        </text>
+      </view>
+      <view class='address'>
+        <text class='line-ellipsis'>{{item.address}}</text>
+        <text class='distance'>{{item.distance}}</text>
+      </view>
+      <view class='feature-tags'>
+        <text>{{item.refundticket}}</text>
+        <text>{{item.hall}}</text>
+        <text>{{item.streetfood}}</text>
+        <text class='featrue'>VIP</text>
+      </view>
+      <view class="divLine"></view>
+    </view>
+  </view>
+</view>
+<view wx:else>
+  <view hidden="{{!msg}}">
+    <template is="nothing" data='{{message:"没有找到相关内容"}}' />
+  </view> 
+</view>

@@ -1,0 +1,31 @@
+<!-- 搜索 -->
+<searchbar isnavigator="{{true}}"></searchbar>
+<!--导航条-->  
+<scroll-view scroll-x class="scroll">
+  <view class="scroll-tit" >
+    <view wx:for="{{kind}}" wx:key="{{index}}" wx:key="key"
+      class="{{current == index ? 'hover': ''}}" data-current='{{index}}' data-text='{{item}}' bindtap="navtap">
+          {{item}}
+    </view>
+  </view>
+</scroll-view>
+<!--电影-->
+<view class="main">
+  <scroll-view scroll-y="true">
+    <view class='case-page'>
+      <view class='list-masonry'>
+        <view class='item-masonry' wx:for="{{list}}" wx:key="{{index}}" wx:key="key" data-id= "{{item.id}}"  bindtap="tap">
+          <image src='{{item.cover}}' mode='widthFix'></image>
+          <text>{{item.title}}</text>
+          <view style="display:flex;flex-direction:row;">
+            <stars rate="{{item.rate}}"></stars>
+            <view>
+              <text class="country">{{item.country}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <image src='../../icon/icon_top.png' class='goTop' hidden='{{!floorstatus}}' bindtap="goTop"></image>
+</view>

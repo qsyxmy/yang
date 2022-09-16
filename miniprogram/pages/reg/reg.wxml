@@ -1,0 +1,20 @@
+<form bindsubmit="submit">
+	<view class="cu-form-group margin-top">
+		<view class="title">用户名</view>
+    <input name="user"></input>
+	</view>
+  <view class="cu-form-group margin-top">
+		<view class="title">手机号</view>
+    <input name="phone"></input>
+	</view><view class="cu-form-group margin-top">
+		<view class="title">密码</view>
+    <input name="pwd"></input>
+	</view><view class="cu-form-group margin-top">
+		<view class="title">确认密码</view>
+    <input name="rpwd"></input>
+	</view><view class="cu-form-group margin-top">
+		<view class="title">昵称</view>
+    <input name="name"></input>
+	</view>
+  <button form-type="submit">注册</button>
+</form>

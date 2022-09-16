@@ -1,0 +1,115 @@
+@import '../../../templates/nothing-template/nothing-template.wxss';
+page{
+  background-color: #EEE9E9;
+}
+.weui-search-bar {
+  width: 100%;
+  height: 120rpx;
+  position: fixed;
+  top: 0;
+  padding: 8px 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  box-sizing: border-box;
+  background-color: #66CDAA;
+  
+}
+
+.weui-icon-search_in-box {
+  position: absolute;
+  left: 20rpx;
+  top: 14rpx;
+}
+
+.weui-search-bar__form {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: auto;
+          flex: auto;
+  border-radius: 50rpx;
+  background: #FFFFFF;
+  border: 1rpx solid #E6E6EA;
+}
+.weui-search-bar__box {
+  line-height: 80rpx;
+  position: relative;
+  padding-left: 60rpx;
+  padding-right: 60rpx;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+.weui-search-bar__input {
+  height: 80rpx;
+  line-height: 60rpx;
+  font-size: 35rpx;
+}
+
+.weui-search-bar__cancel-btn {
+  margin-left: 20rpx;
+  line-height: 75rpx;
+  color: #fff;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 35rpx;
+}
+
+.wrapper {
+  padding-top: 120rpx;
+  background-color: #fff;
+  height: 100%;
+}
+.cinema-section {
+  padding: 20rpx 0;
+  margin: 0 30rpx;
+  line-height: 1.8em;
+}
+.name-price {
+  font-size: 32rpx;
+  font-family: '微软雅黑';
+  color: #000000;
+}
+.sell-price {
+  font-size: 24rpx;
+  color: #999;
+  white-space: nowrap;
+  margin-left: 20rpx;
+}
+.price {
+  font-size: 34rpx;
+  color: #ef4238;
+}
+.address {
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #666;
+}
+.distance {
+  margin-left: 10rpx;
+}
+.feature-tags {
+  width: 80%;
+}
+.feature-tags text {
+  display: inline-block;
+  border: 1px solid #589daf;
+  color: #589daf;
+  padding: 0 6rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  border-radius: 4rpx;
+  font-size: 24rpx;
+  margin-right: 8rpx;
+}
+.feature-tags .featrue {
+  color: #f90;
+  border-color: #f90;
+}
+/*分割线*/
+.divLine{
+  background: #E0E3DA;
+  width: 100%;
+  height: 5rpx;
+ }

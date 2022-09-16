@@ -1,0 +1,10 @@
+<view class="help">
+  <view class='title'>热门问题</view>
+  <view catchtap="help" data-index="{{index}}" wx:for="{{helpList}}" wx:key="key" url="detail/detail">
+    <view class="list-item">
+        <text class="item-title">{{item.title}}</text>
+        <image class="image-jiantou" src="/icon/icon_jiantou.png"></image>
+    </view>
+    <view class="line"></view>
+  </view>
+</view> 

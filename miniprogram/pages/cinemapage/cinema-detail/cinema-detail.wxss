@@ -1,0 +1,202 @@
+@import '../../../templates/food-template/food-template.wxss';
+.cinema-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx;
+  padding-right: 0;
+  background: #fff;
+}
+.cinema-info .info-box {
+  width: 520rpx;
+}
+.cinema-info .title {
+  font-size: 30rpx;
+  line-height: 48rpx;
+  color: #333;
+}
+.cinema-info .location {
+  margin-top: 2px;
+  font-size: 28rpx;
+  line-height: 37rpx;
+  color: #999;
+}
+.scroll-menu{
+  height: auto;
+  padding-bottom: 10rpx;
+  background-color: #666;
+ }
+.swiper-tab{
+  width: 100%;
+  text-align: center;
+  background-color: #666;
+  white-space: nowrap;
+  display: flex;
+}
+.movie-title{
+  width: 230rpx;
+  white-space: pre-line;
+}
+.swiper-tab-list{ 
+  font-size: 32rpx;
+  display: inline-block;
+  width: 33.33%;
+  color: #999999;
+}
+.on {
+  color: #ffb400;
+}
+.movie-img{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  width: 210rpx;
+  height: 310rpx;
+  border-radius: 5px;
+}
+.grade {
+ margin-left: 15rpx;
+  font-size: 32rpx;
+}
+.small {
+  font-size: 30rpx;
+  margin-right: 20rpx;
+}
+ /*隐藏滚动条*/
+ ::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.swp{
+  height:800rpx;
+}
+
+.nav{
+  width:100%;
+  height:80rpx;
+  display:flex;
+  left:0;
+  background-color: #ffffff;
+  z-index: 999;
+}
+
+.default,.current{
+  height:100%;
+  line-height:80rpx;
+  width:50%;
+  text-align:center;
+  border-bottom:1px solid #dfdfdf; 
+}
+.current{
+   border-bottom:2px solid #66CDAA;
+}
+.show{
+  display:block;
+}
+.hidden{
+  display:none;
+}
+
+.day{
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+  line-height: 1;
+  font-size: 40rpx;
+  color: #333;
+}
+
+.item {
+  display: flex;
+  height: 84rpx;
+  padding: 30rpx 30rpx 30rpx 0;
+  margin: 0 0 0 30rpx;
+  border-bottom: 1px solid #e6e6e6;
+  color: #333;
+}
+.item:last-child {
+  border: none;
+}
+.box {
+  display: flex;
+  height: 84rpx;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.begin {
+  line-height: 1;
+  font-size: 40rpx;
+  color: #333;
+  white-space: nowrap;
+}
+.end {
+  margin-left: 1px;
+  color: #999;
+  font-size: 22rpx;
+  white-space: nowrap;
+}
+.info-block {
+  margin-left: 34rpx;
+  width: 180rpx;
+  overflow-x: hidden;
+}
+.lan {
+  margin-top: 1px;
+  font-size: 26rpx;
+  color: #333;
+}
+.hall {
+  font-size: 22rpx;
+  color: #999;
+}
+.price {
+  /* flex: 0 1 auto; */
+  width: 260rpx;
+  margin-left: 20rpx;
+}
+.price-box {
+  display: flex;
+  /* flex-wrap: wrap; */
+  height: 40rpx;
+  align-items: flex-end;
+}
+.sellPr {
+  line-height: 1;
+  color: #f03d37;
+  margin-top: 1px;
+  font-size: 38rpx;
+  margin-right: 10rpx;
+}
+.d {
+  font-size: 22rpx;
+}
+.discount {
+  color: #999;
+  font-size: 22rpx;
+}
+.button-block {
+  display: flex;
+  align-items: center;
+  margin-left: 34rpx;
+}
+.button {
+  width: 120rpx;
+  height: 60rpx;
+  line-height: 57rpx;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: #f03d37;
+  color: #fff;
+  border-radius: 8rpx;
+  white-space: nowrap;
+  font-size: 27rpx;
+  border: none;
+}
+.food-title {
+  padding-left: 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  color: #999;
+}

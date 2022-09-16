@@ -1,0 +1,45 @@
+<view class="view_contain">
+  <!-- 第一部分 -->
+  
+  <!-- 第二部分 -->
+  <view class="view_2">
+    <view class="list-item" bindtap="todingdan">
+        <image class="item-image" src="/icon/icon_menu.png"></image>
+        <text class="item-text">我的订单</text>
+        <image class="image-jiantou" src="/icon/icon_jiantou.png"></image>
+      </view>
+    <navigator wx:for="{{menuList}}" wx:key="key" url="{{item.url}}">
+      <view class="list-item">
+        <image class="item-image" src="{{item.image}}"></image>
+        <text class="item-text">{{item.text}}</text>
+        <image class="image-jiantou" src="{{item.icon}}"></image>
+      </view>
+      <view class="line"></view>
+    </navigator>
+    <navigator wx:if="{{islogin=='false'}}" url="../login/login">
+      <view class="list-item">
+        <image class="item-image" src="/icon/icon_coupon.png"></image>
+        <text class="item-text">登录</text>
+        <image class="image-jiantou" src="/icon/icon_jiantou.png"></image>
+      </view>
+      <view class="line"></view>
+    </navigator>
+    <navigator wx:else bindtap="exit">
+      <view class="list-item">
+        <image class="item-image" src="/icon/icon_coupon.png"></image>
+        <text class="item-text">退出登录</text>
+        <image class="image-jiantou" src="/icon/icon_jiantou.png"></image>
+      </view>
+      <view class="line"></view>
+    </navigator>
+    <navigator url="../reg/reg">
+      <view class="list-item">
+        <image class="item-image" src="/icon/icon_coupon.png"></image>
+        <text class="item-text">注册</text>
+        <image class="image-jiantou" src="/icon/icon_jiantou.png"></image>
+      </view>
+      <view class="line"></view>
+    </navigator>
+   
+  </view>
+</view>

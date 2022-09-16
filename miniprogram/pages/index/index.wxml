@@ -1,0 +1,84 @@
+<!-- 搜索 -->
+<view class='topbar'>
+    <navigator class='city-entry' url="../city-select/city-select">
+        <text class='city-name'>{{city}}</text>
+        <text class='city-entry-arrow'></text>
+    </navigator>
+    <navigator class='search-input' url="../cinemapage/search-cinema/search-cinema">
+        <image src="../../icon/icon_search.png" class="icon-search"></image>
+        搜影院
+    </navigator>
+</view>
+<!-- 轮播图 -->
+<scroll-view scroll-y="true" >
+    <view class="bottom">
+        <swiper class="lunbo" indicator-dots="true" autoplay="true" interval="3000" circular="true" indicator-active-color="#fff">
+            <swiper-item><image class="lunbo-img" mode="aspectFill" src="{{lunboList[0].img}}"></image></swiper-item>
+            <swiper-item><image class="lunbo-img" mode="aspectFill" src="{{lunboList[1].img}}"></image></swiper-item>
+            <swiper-item><image class="lunbo-img" mode="aspectFill" src="{{lunboList[2].img}}"></image></swiper-item>
+            <swiper-item><image class="lunbo-img" mode="aspectFill" src="{{lunboList[3].img}}"></image></swiper-item>
+        </swiper>
+    </view>
+    <!-- tab切换 -->
+    <view class="nav">
+        <view class="{{homeSelected?'current':'default'}}" bindtap="handleHomeSelected">正在热映</view>
+        <view class="{{comingSelected?'current':'default'}}" bindtap="handleComingSelected">即将上映</view>
+    </view>
+    <view class="{{homeSelected?'show':'hidden'}}">
+        <!-- 正在热映 -->
+        <scroll-view class="scroll-menu" scroll-x="true">
+            <view class="scroll-nav" >
+                <view class="nav-item" wx:for="{{onshowList}}" wx:key="key" data-id="{{item.id}}" bindtap="bindItem">
+                    <view class="mod-img">
+                        <image class="mod-image" mode="aspectFill" src="{{item.images.large}}"></image>
+                    </view>
+                    <view class="mod-title">
+                        <text class="mod-text">{{item.title}}</text>  
+                    </view>                           
+                    <view class="mod-info">
+                        <view class="moinfont">查看详情</view>
+                    </view>
+                </view>
+            </view> 
+        </scroll-view>
+    </view>
+    <view class="{{comingSelected?'show':'hidden'}}">
+        <!-- 即将上映 -->
+        <scroll-view class="scroll-menu" scroll-x="true">
+            <view class="scroll-nav">
+                <view data-id="{{item.id}}" bindtap="bindItem" class="nav-item" wx:for="{{comingsoonList}}" wx:key="key">
+                    <view>
+                        <image class="mod-image" mode="aspectFill" src="{{item.images.large}}"></image>
+                    </view>
+                    <view class="mod-title">
+                        <text class="mod-text">{{item.title}}</text>  
+                    </view>                           
+                    <view class="mod-info">
+                        <view class="moinfont">{{item.pubdates}}</view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <!--视频-->
+    <image src='../../icon/icon_top.png' class='goTop' hidden='{{!floorstatus}}' bindtap="goTop"></image>
+    <view wx:for="{{videoList}}" wx:key="key" class="video-play">
+        <view>
+            <video id="index{{index}}" src="{{item.video_url}}" wx:if="{{playIndex==index}}" autoplay='true' show-center-play-btn='false'></video>
+        </view>
+        <view id="{{index}}" class="cover" style="display: {{playIndex==index?'none':'block'}};" bindtap="videoPlay">
+            <image class="coverImg" src="{{item.poster}}" mode="scaleToFill">
+                <image class="playImg" src="/icon/icon_startbutton.png" mode="scaleToFill" ></image>
+                <view class="word">{{item.text}}</view>
+            </image>
+        </view>
+        <view class='post-author-date'>
+            <image class='post-author' src='{{item.avatar}}'></image>
+            <text class='post-date'>{{item.data}}</text>
+            <image class="post-more" src="/icon/icon_more.png"></image>
+        </view>
+    </view>
+</scroll-view> 
+
+
+
